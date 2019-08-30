@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"/>
+    <link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css}" rel="stylesheet" id="bs-theme-stylesheet">
+    <title>TravelerDetails</title>
+   <!-- <script src="/js/country.js"></script>-->
+</head>
+<body>
+
+<form th:action="@{/detail}" method="post" th:object="${Traveler}" class ="form-horizontal" autocomplete="off">
+
+
+   <div class="bs-docs-header">
+
+       <div class="container" style="background: darkgray">
+           <h1 class="text-center">Traveler Details</h1>
+       </div>
+   </div>
+
+
+   <div class="container bs-docs-container">
+
+       <div class="form-group">
+        <label>Email address</label>
+           <input type="email" class="form-control" th:field="*{userName}" placeholder="for more than 1 email notification use (;)"/>
+       </div>
+       <div class="form-group">
+           <label>Traveler Name</label>
+           <input type="text" class="form-control" th:field="*{userName}" placeholder="if more than 1 use comma(,)"/>
+       </div>
+
+       <div class="form-group">
+
+           <label>Start Date</label>
+           <input type="datetime-local" class="form-control" placeholder="mm/dd/yyyy" />
+       </div>
+      <!-- <div class="autocomplete" style="width:300px;">
+           <input id="country" type="text" name="myCountry" placeholder="Country" th:onkeydown="'autocomplete(document.getElementById(country),null);'"/>
+       </div>
+-->
+       <div class="form-group">
+           <label>Return Date</label>
+           <input type="datetime-local" class="form-control" placeholder="mm/dd/yyyy" />
+       </div>
+
+       <div class="form-group">
+           <label>Source</label>
+           <input type="text" class="form-control" placeholder="source Airport" />
+       </div>
+
+       <div class="form-group">
+           <label>Destination</label>
+           <input type="text" class="form-control" placeholder="destination Airport" />
+       </div>
+
+       <div class="form-group">
+           <label>Travel itinerary</label>
+           <input type="text" class="form-control" placeholder="specify  Outbound/Inbound flight #  separated by (;)" />
+       </div>
+
+       <div class="form-group">
+           <label>Operated By</label>
+           <input type="text" class="form-control" placeholder="Airlines Name" />
+       </div>
+
+       <div class="form-group">
+           <label>Service obtained</label>
+           <select>
+               <option value="D">Disability</option>
+               <option value="W">Wheel Chair</option>
+               <option value="O">Other</option>
+           </select>
+       </div>
+
+
+       <div class="form-group">
+           <label>Have you ever travelled before</label>
+           <input type="radio" name ="travel"value="Y" class="col-md-offset-6" />Yes
+           <input type="radio" name ="travel" value="N" class="col-md-offset-6"/>No
+       </div>
+
+       <div class="form-group">
+           <input type="submit" class="success">
+
+   </div>
+
+</form>
+
+
+</body>
+
+
+</html>

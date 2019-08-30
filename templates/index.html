@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login Page</title>
+    <link rel="stylesheet"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"/>
+
+
+</head>
+<body >
+<form method="post" th:action="@{/login}" th:object="${userDto}">
+
+    <div class="table-responsive">
+
+        <table class="table" style="align-self: center;background-color: darkgray;box-sizing: content-box; margin-top: 40" width="100px"  >
+        <tr>
+
+           <td><label class="media-middle">Email Address : </label></td>
+            <td><input type="email" id="email"   th:field="*{userName}"/></td>
+
+        </tr>
+            <tr>
+
+           <td> <label>Password :</label></td>
+            <td> <input type="Password"   th:field="*{password}"/></td>
+
+            </tr>
+            <tr>
+            <td></td>
+           <td> <button type="submit" class="btn btn-default"> Submit </button></td>
+
+            </tr>
+        <tr>
+            <td></td>
+            <td><a th:href="@{/newUser}">New User</a></td>
+
+        </tr>
+            <tr>
+            <td></td>
+           <td> <a th:href="@{/forgotUser}">Forgot User</a></td>
+
+            </tr>
+        </table>
+    </div>
+</form>
+</body>
+</html>
